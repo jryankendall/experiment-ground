@@ -1,0 +1,45 @@
+body {
+    background-image: url("../images/circles-and-roundabouts.png.png");
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    font-size: 3em;
+    padding: 24px;
+}
+
+.header-grid, .content-area {
+    display: grid;
+    grid-template-columns: 1fr 2fr 4fr 2fr 1fr;
+    grid-template-rows: 1fr;
+    margin: 0px 0px 24px 0px;
+    grid-gap: 12px;
+}
+
+
+.header-grid {
+    background-color: #ebebeb;
+}
+
+.header-page-name {
+    grid-column: 2 / 3;
+    text-align: right;
+    background-color: #E90;
+    color: #FFFFFF;
+    height: 100px;
+}
+
+.header-menu {
+    grid-column: 4 / 5;
+    text-align: left;
+}
+
+.side-menu {
+    grid-column: 2 / 3;
+    border: solid black 1px;
+    height: 300px;
+}
+
+.article-block {
+    grid-column: 3 / 4;
+}
