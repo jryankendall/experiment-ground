@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script type="text/javascript">
+        var weekNumbers = {
+            1 : "Sunday",
+            2 : "Monday",
+            3 : "Tuesday",
+            4 : "Wednesday",
+            5 : "Thursday",
+            6 : "Friday",
+            7 : "Saturday"
+        }
+
+        function getTheDay(inputNum) {
+            if ( inputNum < 1 || inputNum > 7 ) {
+                return undefined;
+            }
+            else {
+                return weekNumbers[inputNum];
+                
+            }
+        }
+
+    </script>
+</body>
+</html>
