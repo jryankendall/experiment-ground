@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Sign-Up Today!</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <br>
+
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+      <h1 class="text-center">Sign-Up Today!</h1>
+    </div>
+
+    <div class="row">
+
+      <!-- Sign-Up Card-->
+      <div class="col-lg-6">
+        <div class="card card-default">
+          <div class="card-header">
+            New Member Sign-Up
+          </div>
+          <div class="card-body">
+
+            <!-- Sign-up Form (note the various input "types")-->
+            <form role="form">
+              <div class="form-group row">
+                <label for="name-input">Name:</label>
+                <input class="form-control" id="name-input" type="text">
+              </div>
+              <div class="form-group row">
+                <label for="email-input">Email:</label>
+                <input class="form-control" id="email-input" type="email">
+              </div>
+              <div class="form-group row">
+                <label for="age-input">Age:</label>
+                <input class="form-control" id="age-input" type="number">
+              </div>
+              <div class="form-group row">
+                <label for="comment-input">How did you hear about us?</label>
+                <textarea class="form-control" id="comment-input" rows="5"></textarea>
+              </div>
+              <button class="btn btn-default" id="add-user" type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Most Recent Member card -->
+      <div class="col-lg-6">
+        <div class="card card-default">
+          <div class="card-header">
+            Most Recent Member
+          </div>
+          <div class="card-body" id="recent-member">
+            <h2 id="name-display">Jimmy John</h2>
+            <h4 id="email-display">Email: jimmy@john.edu</h4>
+            <h4 id="age-display">Age: 27</h4>
+            <p id="comment-display">I'm signing up, because I want to spread sandwiches to the world.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+
+  <!-- Script -->
+  <script>
+    // ========================================= START CODING BELOW!!
+    
+    var storedName = localStorage.getItem("name");
+    var storedEmail = localStorage.getItem("email");
+    var storedAge = localStorage.getItem("age");
+    var storedComment = localStorage.getItem("comment");
+
+    $( function() {
+      $("#name-display").text(storedName);
+      $("#email-display").text("Email: " + storedEmail);
+      $("#age-display").text("Age: " + storedAge);
+      $("#comment-display").text(storedComment);
+
+    })
+
+    // Capture Button Click
+    $("#add-user").on("click", function(event) {
+      event.preventDefault();
+
+      // Capture User Inputs and store them into variables
+      var enteredName = $("#name-input").val();
+      var enteredEmail = $("#email-input").val();
+      var enteredAge = $("#age-input").val();
+      var enteredComment = $("#comment-input").val();
+
+      localStorage.setItem("name", enteredName);
+      localStorage.setItem ("email", enteredEmail);
+                  localStorage.setItem("age", enteredAge);
+                  localStorage.setItem("comment", enteredComment);
+
+    storedName = localStorage.getItem("name");
+    storedEmail = localStorage.getItem("email");
+    storedAge = localStorage.getItem("age");
+    storedComment = localStorage.getItem("comment");
+
+
+      // Console log each of the user inputs to confirm we are receiving them correctly
+      console.log(enteredName + enteredEmail + enteredAge + enteredComment);
+
+      // Output all of the new information into the relevant HTML sections
+      $("#name-display").text(storedName);
+      $("#email-display").text("Email: " + storedEmail);
+      $("#age-display").text("Age: " + storedAge);
+      $("#comment-display").text(storedComment);
+    });
+
+  </script>
+
+</body>
+
+</html>

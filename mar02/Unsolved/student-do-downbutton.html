@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>CountDown Button with Firebase!</title>
+
+  <!-- Firebase Reference -->
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
+</head>
+
+<body>
+
+  <h1>Only
+    <span id="click-value"></span> clicks to go!!</h1>
+
+  <button id="click-button">Click Me!!!!</button>
+  <button id="restart-button">Restart</button>
+
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  
+<script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAPMj-INmQelIhUwyfSvwLXqBL6EjPvo6c",
+    authDomain: "mar2-test-base.firebaseapp.com",
+    databaseURL: "https://mar2-test-base.firebaseio.com",
+    projectId: "mar2-test-base",
+    storageBucket: "mar2-test-base.appspot.com",
+    messagingSenderId: "854221653732"
+  };
+  firebase.initializeApp(config);
+</script>
+
+  <!-- Script -->
+  <script src="logic.js"></script>
+  
+  //if you choose the harder option comment Line 26 and uncomment Line 29
+  <!-- <script src="logicOption2.js"></script> -->
+</body>
+
+</html>

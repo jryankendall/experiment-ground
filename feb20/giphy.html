@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Giphy API</title>
+</head>
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    // Example queryURL for Giphy API
+    var queryURL = "https://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC";
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
+      console.log(response);
+    });
+
+    function displayGif(input) {
+        var newDiv = $("<div>");
+        var newGif = $("<img>");
+        $.ajax({
+            url: input,
+            method: "GET"
+            }).then(function(response) {
+            imgUrl = response.data[1].images.fixed_width.url;
+            imgUrl.toString();
+            console.log(imgUrl);
+            
+        newGif.attr("src", imgUrl);
+            });
+
+        newDiv.append(newGif);
+
+        $("body").append(newDiv);
+    }
+
+    displayGif("https://api.giphy.com/v1/gifs/trending?api_key=dc6zaTOxFJmzC");
+  </script>
+
+</body>
+
+</html>
